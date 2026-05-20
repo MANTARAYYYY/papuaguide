@@ -6,7 +6,7 @@
     <title>Katalog Destinasi | Papuaguide-id</title>
     
     <meta name="description" content="Katalog destinasi wisata alam, bahari, pegunungan, dan budaya terbaik di Papua. Temukan petualangan Anda berikutnya.">
-    <meta name="keywords" content="destinasi papua, objek wisata papua, raja ampat, carstensz, macarthur, sentani">
+    <meta name="keywords" content="destinasi papua, objek wisata papua, raja ampat, carstensz, macarthur, sentani, teluk cenderawasih, danau paniai">
     <meta name="author" content="Papuaguide-id">
     <meta name="robots" content="index, follow">
 
@@ -70,7 +70,6 @@
     </footer>
 
     <script>
-        // Data destinasi menggunakan ID spesifik Unsplash agar kebal pemblokiran browser lokal
         const dataDestinasi = [
             {
                 id: 1,
@@ -116,6 +115,52 @@
                 judul: "Tugu MacArthur",
                 gambar: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=800&q=80",
                 deskripsi: "Situs saksi bisu sejarah Perang Dunia II di Jayapura yang menawarkan lanskap panorama alam yang memikat."
+            },
+            // DESTINASI BARU DITAMBAHKAN DI BAWAH INI
+            {
+                id: 6,
+                kategori: "alam",
+                label: "Bahari",
+                warnaLabel: "bg-yellow-400 text-gray-900",
+                judul: "Teluk Cenderawasih",
+                gambar: "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&w=800&q=80",
+                deskripsi: "Taman nasional perairan laut terluas di Indonesia, tempat terbaik untuk berenang bersama Hiu Paus raksasa."
+            },
+            {
+                id: 7,
+                kategori: "alam",
+                label: "Alam",
+                warnaLabel: "bg-green-500 text-white",
+                judul: "Taman Nasional Lorentz",
+                gambar: "https://images.unsplash.com/photo-1542224566-6e85f2e6772f?auto=format&fit=crop&w=800&q=80",
+                deskripsi: "Situs Warisan Dunia UNESCO dengan ekosistem terlengkap di Asia Pasifik, dari pesisir hingga pegunungan."
+            },
+            {
+                id: 8,
+                kategori: "budaya",
+                label: "Budaya",
+                warnaLabel: "bg-red-500 text-white",
+                judul: "Desa Wisata Sauwandarek",
+                gambar: "https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=800&q=80",
+                deskripsi: "Desa tradisional yang terkenal dengan anyaman daun pandan (Noken) dan keramahan penduduk aslinya."
+            },
+            {
+                id: 9,
+                kategori: "alam",
+                label: "Bahari",
+                warnaLabel: "bg-yellow-400 text-gray-900",
+                judul: "Pantai Base G",
+                gambar: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+                deskripsi: "Pantai berpasir putih nan indah di Jayapura yang juga memiliki nilai historis sebagai basis Sekutu pada PD II."
+            },
+            {
+                id: 10,
+                kategori: "alam",
+                label: "Alam",
+                warnaLabel: "bg-green-500 text-white",
+                judul: "Danau Paniai",
+                gambar: "https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?auto=format&fit=crop&w=800&q=80",
+                deskripsi: "Pernah dinobatkan sebagai danau terindah pada Konferensi Danau Se-Dunia. Menyajikan pesona alam eksotis."
             }
         ];
 
@@ -130,16 +175,14 @@
 
             data.forEach(item => {
                 const cardHTML = `
-                    <div class="destinasi-item bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden fade-in">
+                    <div class="destinasi-item bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden fade-in flex flex-col">
                         <div class="h-48 overflow-hidden bg-gray-200 relative group">
                             <img src="${item.gambar}" alt="${item.judul}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <span class="absolute top-4 right-4 ${item.warnaLabel} text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">${item.label}</span>
                         </div>
-                        <div class="p-6 flex flex-col h-[200px] justify-between">
-                            <div>
-                                <h4 class="font-extrabold text-xl mb-2 text-gray-900 line-clamp-1">${item.judul}</h4>
-                                <p class="text-gray-600 text-sm mb-4 line-clamp-3">${item.deskripsi}</p>
-                            </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h4 class="font-extrabold text-xl mb-2 text-gray-900 line-clamp-1">${item.judul}</h4>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">${item.deskripsi}</p>
                             <a href="#" class="inline-flex items-center text-green-700 font-bold text-sm hover:text-green-800 hover:underline mt-auto">
                                 Baca Selengkapnya <i class="fas fa-arrow-right ml-2 text-xs"></i>
                             </a>
