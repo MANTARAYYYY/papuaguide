@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papuaguide-id | Jelajahi Surga di Ujung Timur Nusantara</title>
+    
+    <meta name="description" content="Papuaguide-id: Portal panduan wisata terlengkap untuk menjelajahi keindahan alam, bahari, dan budaya eksotis di Tanah Papua.">
+    <meta name="keywords" content="wisata papua, raja ampat, lembah baliem, danau sentani, panduan wisata papua, travel papua, papuaguide">
+    <meta name="author" content="Papuaguide-id">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Papuaguide-id | Jelajahi Surga di Timur Nusantara">
+    <meta property="og:description" content="Dari bawah laut Raja Ampat hingga budaya Lembah Baliem. Rencanakan perjalanan Anda bersama ahlinya.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://papuaguide-id.vercel.app">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-3xl font-black text-green-800 tracking-tighter">Papua<span class="text-yellow-500">guide</span><span class="text-gray-800 font-bold">-id</span></a>
+                </div>
+                
+                <div class="hidden lg:flex space-x-8 items-center">
+                    <a href="#beranda" class="text-green-700 font-bold border-b-2 border-green-700 pb-1">Beranda</a>
+                    <a href="#tentang" class="text-gray-700 hover:text-green-700 font-semibold transition">Tentang</a>
+                    <a href="destinasi.html" class="text-gray-700 hover:text-green-700 font-semibold transition">Destinasi</a>
+                    <a href="#artikel" class="text-gray-700 hover:text-green-700 font-semibold transition">Artikel</a>
+                    <a href="#faq" class="text-gray-700 hover:text-green-700 font-semibold transition">FAQ</a>
+                    <a href="#kontak" class="bg-green-700 text-white px-6 py-2.5 rounded-full font-bold hover:bg-green-800 transition shadow-md">Hubungi Kami</a>
+                </div>
+
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-green-700 focus:outline-none">
+                        <i class="fas fa-bars text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 pb-4 shadow-lg absolute w-full">
+            <a href="#beranda" class="block px-6 py-4 text-green-700 font-bold bg-green-50 border-b">Beranda</a>
+            <a href="#tentang" class="block px-6 py-4 text-gray-700 font-semibold hover:bg-green-50 border-b">Tentang</a>
+            <a href="destinasi.html" class="block px-6 py-4 text-gray-700 font-semibold hover:bg-green-50 border-b">Destinasi</a>
+            <a href="#artikel" class="block px-6 py-4 text-gray-700 font-semibold hover:bg-green-50 border-b">Artikel</a>
+            <a href="#faq" class="block px-6 py-4 text-gray-700 font-semibold hover:bg-green-50">FAQ</a>
+        </div>
+    </nav>
+
+    <section id="beranda" class="relative pt-20 h-screen min-h-[600px] flex items-center">
+        <div class="absolute inset-0 z-0 bg-gray-900">
+            <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=1920&q=80" alt="Raja Ampat Papua" class="w-full h-full object-cover opacity-80">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-10">
+            <h2 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight drop-shadow-2xl">
+                Temukan Keajaiban di <br> <span class="text-yellow-400">Timur Nusantara</span>
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto drop-shadow-md">
+                Dari keagungan bawah laut Raja Ampat hingga kehangatan budaya Lembah Baliem. Rencanakan perjalanan tak terlupakan Anda bersama ahlinya.
+            </p>
+            <div class="flex justify-center">
+                <a href="destinasi.html" class="bg-yellow-500 text-gray-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition shadow-lg transform hover:-translate-y-1">
+                    Eksplorasi Semua Destinasi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-8 bg-green-700 shadow-inner">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-green-100 font-semibold mb-4 text-sm tracking-wider uppercase">Didukung Penuh Oleh Mitra Pariwisata Kami</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80">
+                <div class="text-white text-2xl font-black italic">Wonderful<span class="text-yellow-300">Indonesia</span></div>
+                <div class="text-white text-xl font-bold"><i class="fas fa-plane-departure mr-2"></i> Papua Airlines</div>
+                <div class="text-white text-xl font-bold"><i class="fas fa-camera mr-2"></i> GeoNational</div>
+                <div class="text-white text-xl font-bold"><i class="fas fa-tree mr-2"></i> Ecotourism ID</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h5 class="text-green-700 font-bold tracking-widest uppercase mb-2">Tentang Papuaguide-id</h5>
+                    <h3 class="text-4xl font-extrabold text-gray-900 mb-6">Mengapa Memilih Tanah Papua?</h3>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        Papua bukan sekadar destinasi; ia adalah pengalaman yang mengubah perspektif hidup. Memiliki salah satu hutan hujan tropis terbesar yang tersisa di bumi dan pusat episentrum keanekaragaman hayati laut dunia.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg border-l-4 border-green-600">
+                            <i class="fas fa-map-marked-alt text-2xl text-green-600 w-10"></i>
+                            <span class="font-bold text-gray-800 ml-2">Panduan Rute Terverifikasi Lokal</span>
+                        </div>
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg border-l-4 border-yellow-500">
+                            <i class="fas fa-leaf text-2xl text-yellow-500 w-10"></i>
+                            <span class="font-bold text-gray-800 ml-2">Mendukung Ekowisata Berkelanjutan</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative mt-10 lg:mt-0">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Laut Terumbu Karang" class="rounded-2xl shadow-2xl w-4/5 ml-auto object-cover h-72 bg-gray-200">
+                    <img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=600&q=80" alt="Pantai Tropis" class="rounded-2xl shadow-2xl w-3/5 absolute -bottom-12 -left-4 border-8 border-white object-cover h-56 bg-gray-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h5 class="text-green-700 font-bold tracking-widest uppercase mb-2">Cuplikan</h5>
+                <h3 class="text-4xl font-extrabold text-gray-900 mb-4">Destinasi Terpopuler</h3>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto rounded mb-10"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden group flex flex-col">
+                    <div class="relative h-64 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=800&q=80" alt="Raja Ampat" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute top-4 right-4 bg-yellow-400 text-gray-900 text-xs font-black px-4 py-1.5 rounded-full uppercase">Bahari</div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h4 class="font-extrabold text-2xl mb-2 text-gray-900">Raja Ampat</h4>
+                        <p class="text-gray-600 mb-6 line-clamp-3">Kepingan surga bawah laut kelas dunia dengan gugusan pulau karang indah.</p>
+                        <a href="destinasi.html" class="mt-auto inline-flex items-center justify-center w-full bg-green-50 text-green-700 font-bold py-3 rounded-xl hover:bg-green-700 hover:text-white transition">Lihat Panduan <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden group flex flex-col">
+                    <div class="relative h-64 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=800&q=80" alt="Budaya" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-black px-4 py-1.5 rounded-full uppercase">Budaya</div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h4 class="font-extrabold text-2xl mb-2 text-gray-900">Lembah Baliem</h4>
+                        <p class="text-gray-600 mb-6 line-clamp-3">Saksikan tradisi luhur masyarakat pegunungan Jayawijaya yang eksotis dan kaya sejarah.</p>
+                        <a href="destinasi.html" class="mt-auto inline-flex items-center justify-center w-full bg-green-50 text-green-700 font-bold py-3 rounded-xl hover:bg-green-700 hover:text-white transition">Lihat Panduan <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden group flex flex-col">
+                    <div class="relative h-64 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Danau Sentani" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-black px-4 py-1.5 rounded-full uppercase">Alam</div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h4 class="font-extrabold text-2xl mb-2 text-gray-900">Danau Sentani</h4>
+                        <p class="text-gray-600 mb-6 line-clamp-3">Danau luas di bawah kaki Pegunungan Cycloop yang dihiasi pulau-pulau kecil menawan.</p>
+                        <a href="destinasi.html" class="mt-auto inline-flex items-center justify-center w-full bg-green-50 text-green-700 font-bold py-3 rounded-xl hover:bg-green-700 hover:text-white transition">Lihat Panduan <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="destinasi.html" class="inline-flex items-center justify-center bg-gray-900 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-800 transition shadow-lg">
+                    Lihat Seluruh Katalog Destinasi <i class="fas fa-map-marked-alt ml-3"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="artikel" class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h5 class="text-yellow-500 font-bold tracking-widest uppercase mb-2">Inspirasi Perjalanan</h5>
+                <h3 class="text-4xl font-extrabold text-gray-900">Jurnal & Tips Terbaru</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex flex-col sm:flex-row bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=400&q=80" alt="Tips Packing" class="w-full sm:w-48 h-48 sm:h-auto object-cover bg-gray-200">
+                    <div class="p-6 flex flex-col justify-center">
+                        <span class="text-sm font-bold text-green-600 mb-2">Persiapan</span>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3 hover:text-green-700 cursor-pointer">Panduan Packing ke Pedalaman Papua</h4>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Barang apa saja yang wajib dibawa saat Anda berencana mengunjungi wilayah pegunungan?</p>
+                        <span class="text-gray-400 text-xs font-semibold"><i class="far fa-clock mr-1"></i> 5 Menit Baca</span>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1473116763269-255ea74275c9?auto=format&fit=crop&w=400&q=80" alt="Kuliner" class="w-full sm:w-48 h-48 sm:h-auto object-cover bg-gray-200">
+                    <div class="p-6 flex flex-col justify-center">
+                        <span class="text-sm font-bold text-yellow-500 mb-2">Kuliner Lokal</span>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3 hover:text-green-700 cursor-pointer">Mencicipi Kuliner Khas Tangan Penduduk Asli</h4>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Perjalanan tidak lengkap tanpa mencicipi makanan olahan sagu khas timur Indonesia.</p>
+                        <span class="text-gray-400 text-xs font-semibold"><i class="far fa-clock mr-1"></i> 3 Menit Baca</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <h5 class="text-green-700 font-bold tracking-widest uppercase mb-2">Bantuan</h5>
+                    <h3 class="text-4xl font-extrabold text-gray-900 mb-8">Pertanyaan Umum (FAQ)</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="border border-gray-200 rounded-xl overflow-hidden">
+                            <button class="faq-btn w-full text-left px-6 py-4 bg-white hover:bg-green-50 font-bold text-gray-900 flex justify-between items-center transition shadow-sm">
+                                Kapan waktu terbaik mengunjungi Raja Ampat?
+                                <i class="fas fa-chevron-down text-green-600 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 text-gray-600 bg-gray-50 border-t border-gray-100">
+                                Waktu terbaik adalah antara bulan Oktober hingga April saat ombak laut cenderung tenang dan air sangat jernih.
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-xl overflow-hidden">
+                            <button class="faq-btn w-full text-left px-6 py-4 bg-white hover:bg-green-50 font-bold text-gray-900 flex justify-between items-center transition shadow-sm">
+                                Apakah aman bepergian ke Papua?
+                                <i class="fas fa-chevron-down text-green-600 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 text-gray-600 bg-gray-50 border-t border-gray-100">
+                                Sangat aman selama Anda mengikuti arahan rute wisata resmi dan menghormati adat istiadat penduduk lokal.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-10 shadow border border-gray-100" id="kontak">
+                    <h4 class="text-3xl font-extrabold mb-3 text-gray-900">Dapatkan Panduan PDF Eksklusif</h4>
+                    <p class="text-gray-600 mb-8">Berlangganan informasi gratis untuk mendapatkan tips menghemat budget akomodasi wisata di Papua.</p>
+                    <form onsubmit="event.preventDefault(); alert('Panduan telah dikirim ke email Anda!');">
+                        <div class="mb-5"><input type="text" class="w-full px-5 py-4 rounded-xl border border-gray-300 bg-gray-50" placeholder="Nama Lengkap" required></div>
+                        <div class="mb-8"><input type="email" class="w-full px-5 py-4 rounded-xl border border-gray-300 bg-gray-50" placeholder="Alamat Email Anda" required></div>
+                        <button type="submit" class="w-full bg-green-700 text-white font-extrabold text-lg py-4 rounded-xl hover:bg-green-800 transition shadow-lg">Kirim Saya Panduan PDF <i class="fas fa-paper-plane ml-3"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-950 text-gray-400 pt-16 pb-8 border-t-4 border-yellow-500">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+            <h2 class="text-2xl font-black text-white tracking-tighter mb-4">Papua<span class="text-yellow-500">guide</span>-id</h2>
+            <p>&copy; 2026 Papuaguide-id. Didesain dengan <i class="fas fa-heart text-red-500 mx-1"></i> di Indonesia.</p>
+        </div>
+    </footer>
+
+    <script>
+        const btnMenu = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        btnMenu.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                content.classList.toggle('hidden');
+                icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+    </script>
+</body>
+</html>
