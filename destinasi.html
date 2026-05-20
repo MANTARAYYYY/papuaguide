@@ -19,11 +19,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        .fade-in { animation: fadeIn 0.4s ease-in-out; }
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        /* Custom Scrollbar untuk Filter Menu */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased pt-20">
@@ -44,21 +47,25 @@
         </div>
     </nav>
 
-    <section class="py-16 min-h-[70vh]">
+    <section class="py-16 min-h-[80vh]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Eksplorasi Seluruh Destinasi</h1>
-                <p class="text-gray-600 max-w-2xl mx-auto mb-8">Temukan keajaiban alam dan budaya yang tersebar di seluruh pelosok Tanah Papua.</p>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Eksplorasi Keajaiban Papua</h1>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-8 text-lg">Dari Kepulauan Raja Ampat hingga padang savana Merauke, temukan 15 destinasi terbaik di 6 Provinsi Tanah Papua.</p>
                 <div class="w-24 h-1 bg-yellow-500 mx-auto rounded mb-10"></div>
                 
-                <div class="flex flex-wrap justify-center gap-4 mb-12">
-                    <button class="filter-btn bg-green-700 text-white px-6 py-2.5 rounded-full font-bold shadow-md transition" data-filter="all">Semua Destinasi</button>
-                    <button class="filter-btn bg-white text-gray-700 border border-gray-300 px-6 py-2.5 rounded-full font-bold hover:bg-green-50 shadow-sm transition" data-filter="alam">Alam & Bahari</button>
-                    <button class="filter-btn bg-white text-gray-700 border border-gray-300 px-6 py-2.5 rounded-full font-bold hover:bg-green-50 shadow-sm transition" data-filter="budaya">Budaya & Sejarah</button>
+                <div class="flex overflow-x-auto hide-scroll justify-start md:justify-center gap-3 mb-10 pb-2">
+                    <button class="filter-btn flex-shrink-0 bg-green-700 text-white px-6 py-2.5 rounded-full font-bold shadow-md transition" data-filter="all">Semua Wilayah</button>
+                    <button class="filter-btn flex-shrink-0 bg-white text-gray-700 border border-gray-300 px-5 py-2.5 rounded-full font-bold hover:bg-green-50 shadow-sm transition" data-filter="papua-barat-daya">Papua Barat Daya</button>
+                    <button class="filter-btn flex-shrink-0 bg-white text-gray-700 border border-gray-300 px-5 py-2.5 rounded-full font-bold hover:bg-green-50 shadow-sm transition" data-filter="papua-barat">Papua Barat</button>
+                    <button class="filter-btn flex-shrink-0 bg-white text-gray-700 border border-gray-300 px-5 py-2.5 rounded-full font-bold hover:bg-green-50 shadow-sm transition" data-filter="papua">Papua (Induk)</button>
+                    <button class="filter-btn flex-shrink-0 bg-white text-gray-700 border border-gray-300 px-5 py-2.5 rounded-full font-bold hover:bg-green-50 shadow-sm transition" data-filter="papua-tengah">Papua Tengah</button>
+                    <button class="filter-btn flex-shrink-0 bg-white text-gray-700 border border-gray-300 px-5 py-2.5 rounded-full font-bold hover:bg-green-50 shadow-sm transition" data-filter="papua-pegunungan">Papua Pegunungan</button>
+                    <button class="filter-btn flex-shrink-0 bg-white text-gray-700 border border-gray-300 px-5 py-2.5 rounded-full font-bold hover:bg-green-50 shadow-sm transition" data-filter="papua-selatan">Papua Selatan</button>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10" id="grid-container"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="grid-container"></div>
         </div>
     </section>
 
@@ -71,97 +78,32 @@
 
     <script>
         const dataDestinasi = [
-            {
-                id: 1,
-                kategori: "alam",
-                label: "Bahari",
-                warnaLabel: "bg-yellow-400 text-gray-900",
-                judul: "Kepulauan Raja Ampat",
-                gambar: "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=800&q=80",
-                deskripsi: "Kepingan surga yang jatuh ke bumi. Spot diving kelas dunia dengan terumbu karang yang memukau."
-            },
-            {
-                id: 2,
-                kategori: "budaya",
-                label: "Budaya",
-                warnaLabel: "bg-red-500 text-white",
-                judul: "Lembah Baliem",
-                gambar: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=800&q=80",
-                deskripsi: "Saksikan tradisi luhur masyarakat pegunungan Jayawijaya yang eksotis dalam balutan festival tertua."
-            },
-            {
-                id: 3,
-                kategori: "alam",
-                label: "Alam",
-                warnaLabel: "bg-green-500 text-white",
-                judul: "Danau Sentani",
-                gambar: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
-                deskripsi: "Danau terluas di Papua yang dihiasi oleh pulau-pulau kecil. Sangat indah dinikmati saat matahari terbenam."
-            },
-            {
-                id: 4,
-                kategori: "alam",
-                label: "Pegunungan",
-                warnaLabel: "bg-teal-600 text-white",
-                judul: "Puncak Jayawijaya",
-                gambar: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
-                deskripsi: "Satu-satunya kawasan pegunungan tinggi di Indonesia di mana Anda bisa menemukan fenomena salju abadi."
-            },
-            {
-                id: 5,
-                kategori: "budaya",
-                label: "Sejarah",
-                warnaLabel: "bg-amber-700 text-white",
-                judul: "Tugu MacArthur",
-                gambar: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=800&q=80",
-                deskripsi: "Situs saksi bisu sejarah Perang Dunia II di Jayapura yang menawarkan lanskap panorama alam yang memikat."
-            },
-            // DESTINASI BARU DITAMBAHKAN DI BAWAH INI
-            {
-                id: 6,
-                kategori: "alam",
-                label: "Bahari",
-                warnaLabel: "bg-yellow-400 text-gray-900",
-                judul: "Teluk Cenderawasih",
-                gambar: "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&w=800&q=80",
-                deskripsi: "Taman nasional perairan laut terluas di Indonesia, tempat terbaik untuk berenang bersama Hiu Paus raksasa."
-            },
-            {
-                id: 7,
-                kategori: "alam",
-                label: "Alam",
-                warnaLabel: "bg-green-500 text-white",
-                judul: "Taman Nasional Lorentz",
-                gambar: "https://images.unsplash.com/photo-1542224566-6e85f2e6772f?auto=format&fit=crop&w=800&q=80",
-                deskripsi: "Situs Warisan Dunia UNESCO dengan ekosistem terlengkap di Asia Pasifik, dari pesisir hingga pegunungan."
-            },
-            {
-                id: 8,
-                kategori: "budaya",
-                label: "Budaya",
-                warnaLabel: "bg-red-500 text-white",
-                judul: "Desa Wisata Sauwandarek",
-                gambar: "https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=800&q=80",
-                deskripsi: "Desa tradisional yang terkenal dengan anyaman daun pandan (Noken) dan keramahan penduduk aslinya."
-            },
-            {
-                id: 9,
-                kategori: "alam",
-                label: "Bahari",
-                warnaLabel: "bg-yellow-400 text-gray-900",
-                judul: "Pantai Base G",
-                gambar: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-                deskripsi: "Pantai berpasir putih nan indah di Jayapura yang juga memiliki nilai historis sebagai basis Sekutu pada PD II."
-            },
-            {
-                id: 10,
-                kategori: "alam",
-                label: "Alam",
-                warnaLabel: "bg-green-500 text-white",
-                judul: "Danau Paniai",
-                gambar: "https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?auto=format&fit=crop&w=800&q=80",
-                deskripsi: "Pernah dinobatkan sebagai danau terindah pada Konferensi Danau Se-Dunia. Menyajikan pesona alam eksotis."
-            }
+            // PAPUA BARAT DAYA
+            { id: 1, provinsi: "papua-barat-daya", lokasi: "Papua Barat Daya", label: "Bahari", warnaLabel: "bg-blue-500 text-white", judul: "Kepulauan Raja Ampat", gambar: "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=800&q=80", deskripsi: "Kepingan surga yang jatuh ke bumi. Spot diving kelas dunia dengan terumbu karang yang memukau dan keanekaragaman hayati laut tertinggi." },
+            { id: 2, provinsi: "papua-barat-daya", lokasi: "Papua Barat Daya", label: "Ikonik", warnaLabel: "bg-yellow-400 text-gray-900", judul: "Gugusan Karang Piaynemo", gambar: "https://images.unsplash.com/photo-1580556272304-45e0fb1eb246?auto=format&fit=crop&w=800&q=80", deskripsi: "Ikon pariwisata Raja Ampat. Mendaki ratusan anak tangga kayu akan terbayar lunas dengan pemandangan gugusan pulau karang berbentuk bintang." },
+            { id: 3, provinsi: "papua-barat-daya", lokasi: "Papua Barat Daya", label: "Budaya", warnaLabel: "bg-red-500 text-white", judul: "Desa Wisata Sauwandarek", gambar: "https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=800&q=80", deskripsi: "Desa tradisional yang terkenal dengan keramahan penduduk aslinya, serta kerajinan anyaman daun pandan (Noken) yang khas." },
+            
+            // PAPUA BARAT
+            { id: 4, provinsi: "papua-barat", lokasi: "Kaimana, Papua Barat", label: "Bahari", warnaLabel: "bg-blue-500 text-white", judul: "Teluk Triton", gambar: "https://images.unsplash.com/photo-1518349619113-03114f06ac3a?auto=format&fit=crop&w=800&q=80", deskripsi: "Dikenal sebagai 'The Fish Empire'. Menyajikan tebing karst raksasa yang menjulang dari laut, lukisan purba, dan senja terbaik di Kaimana." },
+            { id: 5, provinsi: "papua-barat", lokasi: "Peg. Arfak, Papua Barat", label: "Alam", warnaLabel: "bg-green-500 text-white", judul: "Danau Anggi", gambar: "https://images.unsplash.com/photo-1439853949703-ff2200f56f0a?auto=format&fit=crop&w=800&q=80", deskripsi: "Dua danau kembar (Giji dan Gita) yang berada di ketinggian Pegunungan Arfak, dikelilingi kabut magis dan legenda cinta masyarakat lokal." },
+            
+            // PAPUA (INDUK)
+            { id: 6, provinsi: "papua", lokasi: "Jayapura, Papua", label: "Alam", warnaLabel: "bg-green-500 text-white", judul: "Danau Sentani", gambar: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80", deskripsi: "Danau terluas di Papua yang dihiasi 21 pulau kecil. Lokasi diselenggarakannya Festival Danau Sentani yang menampilkan tarian di atas perahu." },
+            { id: 7, provinsi: "papua", lokasi: "Jayapura, Papua", label: "Sejarah", warnaLabel: "bg-amber-700 text-white", judul: "Tugu MacArthur", gambar: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=800&q=80", deskripsi: "Situs saksi bisu sejarah Perang Dunia II, bekas markas Jenderal Douglas MacArthur, yang menawarkan lanskap panorama indah Danau Sentani dari atas bukit." },
+            { id: 8, provinsi: "papua", lokasi: "Jayapura, Papua", label: "Pantai", warnaLabel: "bg-cyan-500 text-white", judul: "Pantai Base G", gambar: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80", deskripsi: "Pantai berpasir putih bersih dengan ombak Samudra Pasifik. Memiliki nilai historis kuat sebagai basis pasukan Sekutu pada masa lalu." },
+            
+            // PAPUA TENGAH
+            { id: 9, provinsi: "papua-tengah", lokasi: "Nabire, Papua Tengah", label: "Satwa", warnaLabel: "bg-teal-600 text-white", judul: "Taman Nasional Teluk Cenderawasih", gambar: "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&w=800&q=80", deskripsi: "Taman nasional perairan laut terluas di Indonesia. Surganya para penyelam untuk berenang berdampingan dengan Hiu Paus raksasa yang jinak." },
+            { id: 10, provinsi: "papua-tengah", lokasi: "Mimika, Papua Tengah", label: "Pegunungan", warnaLabel: "bg-gray-800 text-white", judul: "Puncak Jayawijaya (Carstensz)", gambar: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80", deskripsi: "Salah satu dari 'Seven Summits' dunia. Satu-satunya kawasan di lintang tropis Indonesia di mana Anda bisa menemukan gletser atau salju abadi." },
+            { id: 11, provinsi: "papua-tengah", lokasi: "Paniai, Papua Tengah", label: "Alam", warnaLabel: "bg-green-500 text-white", judul: "Danau Paniai", gambar: "https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?auto=format&fit=crop&w=800&q=80", deskripsi: "Pernah dinobatkan sebagai salah satu danau terindah pada Konferensi Danau Se-Dunia. Menyajikan pesona air kebiruan yang dikelilingi tebing hijau." },
+            
+            // PAPUA PEGUNUNGAN
+            { id: 12, provinsi: "papua-pegunungan", lokasi: "Wamena, Papua Pegunungan", label: "Budaya", warnaLabel: "bg-red-500 text-white", judul: "Lembah Baliem", gambar: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=800&q=80", deskripsi: "Rumah bagi suku Dani, Yali, dan Lani. Saksikan tradisi purba, mumi yang diawetkan ratusan tahun, dan festival perang adat terbesar di dunia." },
+            { id: 13, provinsi: "papua-pegunungan", lokasi: "Jayawijaya, Papua Pegunungan", label: "Pegunungan", warnaLabel: "bg-gray-800 text-white", judul: "Danau Habema", gambar: "https://images.unsplash.com/photo-1457459676225-c72eb1f364e5?auto=format&fit=crop&w=800&q=80", deskripsi: "Berada di atas awan dengan ketinggian 3.225 mdpl, menjadikannya danau tertinggi di Indonesia dengan latar belakang Puncak Trikora." },
+            
+            // PAPUA SELATAN
+            { id: 14, provinsi: "papua-selatan", lokasi: "Merauke, Papua Selatan", label: "Taman Nasional", warnaLabel: "bg-teal-600 text-white", judul: "Taman Nasional Wasur", gambar: "https://images.unsplash.com/photo-1547234935-80b7145b0d01?auto=format&fit=crop&w=800&q=80", deskripsi: "Dijuluki sebagai 'Serengeti Papua'. Memiliki lanskap padang rumput savana luas tempat berkerumunnya kanguru pohon, wallaby, dan burung eksotis." },
+            { id: 15, provinsi: "papua-selatan", lokasi: "Merauke, Papua Selatan", label: "Landmark", warnaLabel: "bg-yellow-400 text-gray-900", judul: "Monumen Kapsul Waktu", gambar: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80", deskripsi: "Bangunan ikonik berbentuk seperti markas Avengers yang menyimpan harapan dan impian anak-anak Indonesia yang baru akan dibuka pada tahun 2085." }
         ];
 
         const gridContainer = document.getElementById('grid-container');
@@ -169,22 +111,25 @@
         function renderKartu(data) {
             gridContainer.innerHTML = ''; 
             if(data.length === 0) {
-                gridContainer.innerHTML = '<p class="text-gray-500 col-span-3 text-center py-10 font-bold">Belum ada destinasi di kategori ini.</p>';
+                gridContainer.innerHTML = '<div class="col-span-full py-16 text-center"><i class="fas fa-search-location text-5xl text-gray-300 mb-4"></i><p class="text-gray-500 font-bold text-lg">Belum ada destinasi di kategori ini.</p></div>';
                 return;
             }
 
             data.forEach(item => {
                 const cardHTML = `
-                    <div class="destinasi-item bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden fade-in flex flex-col">
-                        <div class="h-48 overflow-hidden bg-gray-200 relative group">
+                    <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden fade-in flex flex-col border border-gray-100 transform hover:-translate-y-1">
+                        <div class="h-56 overflow-hidden bg-gray-200 relative group">
                             <img src="${item.gambar}" alt="${item.judul}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <span class="absolute top-4 right-4 ${item.warnaLabel} text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">${item.label}</span>
+                            <span class="absolute top-4 right-4 ${item.warnaLabel} text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm">${item.label}</span>
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h4 class="font-extrabold text-xl mb-2 text-gray-900 line-clamp-1">${item.judul}</h4>
-                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">${item.deskripsi}</p>
-                            <a href="#" class="inline-flex items-center text-green-700 font-bold text-sm hover:text-green-800 hover:underline mt-auto">
-                                Baca Selengkapnya <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            <div class="mb-2 flex items-center text-xs font-bold text-green-700 bg-green-50 w-max px-3 py-1 rounded-md">
+                                <i class="fas fa-map-marker-alt mr-2 text-green-600"></i> ${item.lokasi}
+                            </div>
+                            <h4 class="font-extrabold text-2xl mb-3 text-gray-900 line-clamp-1">${item.judul}</h4>
+                            <p class="text-gray-600 text-sm mb-5 line-clamp-3 leading-relaxed">${item.deskripsi}</p>
+                            <a href="#" class="inline-flex items-center text-gray-900 font-bold text-sm hover:text-green-700 transition-colors mt-auto">
+                                Baca Panduan <i class="fas fa-arrow-right ml-2 text-xs"></i>
                             </a>
                         </div>
                     </div>
@@ -193,21 +138,28 @@
             });
         }
 
+        // Tampilkan semua data saat pertama kali dimuat
         renderKartu(dataDestinasi);
 
+        // Logika Filter
         const filterBtns = document.querySelectorAll('.filter-btn');
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
+                // Reset semua tombol ke style tidak aktif
                 filterBtns.forEach(b => {
                     b.classList.remove('bg-green-700', 'text-white', 'shadow-md');
                     b.classList.add('bg-white', 'text-gray-700', 'shadow-sm');
                 });
                 
+                // Set style aktif untuk tombol yang diklik
                 btn.classList.remove('bg-white', 'text-gray-700', 'shadow-sm');
                 btn.classList.add('bg-green-700', 'text-white', 'shadow-md');
 
                 const filterValue = btn.getAttribute('data-filter');
-                const dataDisaring = filterValue === 'all' ? dataDestinasi : dataDestinasi.filter(item => item.kategori === filterValue);
+                const dataDisaring = filterValue === 'all' 
+                    ? dataDestinasi 
+                    : dataDestinasi.filter(item => item.provinsi === filterValue);
+                
                 renderKartu(dataDisaring);
             });
         });
